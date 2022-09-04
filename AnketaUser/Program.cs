@@ -13,6 +13,10 @@ namespace AnketaUser
 
             Echo(str, deep);
 
+            Console.WriteLine(Factorial(20));
+
+            Console.WriteLine(PowerUp(3, 3));
+
             Console.ReadKey();
         }
 
@@ -31,6 +35,34 @@ namespace AnketaUser
                 Echo(modif, deep - 1);
             }
 
+        }
+
+        static decimal Factorial(int x)
+        {
+            if (x == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return x * Factorial(x - 1);
+            }
+        }
+
+        private static int PowerUp(int N, byte pow)
+        {
+            if (pow == 0)
+            {
+                return 1;
+            }
+            else if (pow == 1)
+            {
+                return N;
+            }
+            else
+            {
+                return N * PowerUp(N, --pow);
+            }
         }
     }
 }
